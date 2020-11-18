@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app="studentApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head><body ng-controller="studentController"> 
+    <h1>Angajarea la cimpul de munca:</h1>
+    <form ng-submit="submitStudnetForm()" >
+            <label for="firstName" >First Name: </label><br />
+            <input type="text" id="firstName" ng-model="student.firstName" /> <br />
+
+            <label for="lastName">Last Name</label><br />
+                <input type="text" id="lastName" ng-model="student.lastName" /> <br />
+            <label for="dob" >DoB</label><br />
+                <input type="date" id="dob" ng-model="student.DoB" /> <br /><br />
+
+                <span>Facultatea:</span><br />
+                    <label><input value="matematica" type="radio" name="obiect" ng-model="student.obiect" />Matematica</label><br />
+                    <label><input value="chimie" type="radio" name="obiect" ng-model="student.obiect" />Chimie</label> <br />
+               <label><input value="informatica" type="radio" name="obiect" ng-model="student.obiect" />Informatica</label> <br />
+                    <label><input value="economie" type="radio" name="obiect" ng-model="student.obiect" />Economie</label> <br /></br>
+                <span>Obiectul predarii</span><br />
+ <select ng-model="student.object">
+    <option value="">
+    <option value="org">Chimie Organica
+    <option value="econom">Matematica Economica
+    <option value="ist">Istoria Universala
+  </select></br></br>
+
+    
+<input type="submit" ng-click="submitStudnetForm()" value="Submit" 
+ng-disabled="myForm.myInput.$invalid">
+</p>
+        
+<input type="reset" ng-click="resetForm()" value="Reset" /> <br />
+		
+    </form>
+  
+ <h1 ng-show="control">
+Afisarea</br>
+Prenumele : {{studentread.firstName}}</br>
+Nume : {{studentread.lastName}}</br>
+Data Nasterii : {{studentread.DoB}}</br>
+Facultatea : {{studentread.obiect}}</br>
+Obiectul predat: {{studentread.object}}</br>
+Salariul cerut : {{studentread.salariu}}</br>
+
+</h1>
+<my-directive>
+<form name="myForm">
+Salariu dorit : <input name="myInput" type="number" ng-model="student.salariu" required my-directive>
+<h1 ng-show="myForm.myInput.$invalid"> 
+Introdu salariul intre 3000 - 5000
+</h1>
+
+
+</form></my-directive>
+    <script>
+        
+        var studentApp = angular.module('studentApp', []);
+
+        
+        studentApp.controller("studentController", function ($scope, $http) {
+   
+            
+            $scope.originalStudent = {
+                firstName: 'Johny',
+                lastName: 'Deep',
+                DoB: new Date('01/31/1980'),
+                obiect: 'chimie',
+                object: 'econom',
+                salariu:''
+            };
+           $scope.control=false;
+       
+ 
+
+           
+            $scope.student = angular.copy($scope.originalStudent);
+
+           
+            $scope.submitStudnetForm = function () {
+           $scope.studentread = $scope.student; 
+          $scope.control=true;
+            };
+
+           
+            $scope.resetForm = function () {
+                $scope.student = angular.copy($scope.OriginalStudent);
+            $scope.control=false;
+            };
+    });
+studentApp.directive('myDirective', function() {
+    return {
+        require: 'ngModel',
+        link: function(scope, element, attr, mCtrl) {
+            function myValidation(value) {
+                if (value > 2999 && value < 5001) {
+                    mCtrl.$setValidity('', true);
+                
+                } else {mCtrl.$setValidity('', false);}
+                return value;
+            }
+            mCtrl.$parsers.push(myValidation);
+        }
+    };
+});
+    </script>    
+</body>
+</html>
+

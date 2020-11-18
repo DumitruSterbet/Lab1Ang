@@ -1,0 +1,43 @@
+html, body {
+		margin:0px;
+		padding:0px; 
+	}
+	body {
+		
+font-family: 'Sofia';
+		color: #663300;
+	}
+	
+  	.block11 {
+		margin: 20px;
+		padding: 20px;
+		background: white;
+                border: 6px solid #663300;
+                border-radius:30px;
+		max-width: 350px;
+		min-height: 100px;
+		float: left;
+	}
+	input[type="text"], input[type="password"] {
+		background-color: #663300;
+		border: 2px solid #663300;
+		color:  #ffe6e6;
+		padding:10px 30px;
+		margin: 5px;
+	}
+	input[type="email"]  {
+		background-color: #663300;
+		border: 2px solid #663300;
+		color:  #ffe6e6;
+		padding:10px 30px;
+		margin: 5px;
+	}
+	input[type="submit"], input[type="reset"] {
+		background-color: #663300;
+		border: 2px solid #663300;
+		color: #ffe6e6;
+		padding:5px 30px;
+		margin: 5px;
+		font-weight: bold;
+	}
+	

@@ -1,0 +1,84 @@
+html, body {
+		margin:0px;
+		padding:0px; 
+	}
+	body {
+		
+font-family: 'Sofia';
+		color: #663300;
+	}
+	
+	
+	 .meniu_manager{
+		margin: 25px;
+		padding: 20px;
+		background: white;
+                border: 3px solid #663300;
+                border-radius:30px;
+		max-width: 800px;
+		min-height: 10px;
+		float: left;
+	}
+	.BigShow{
+		margin: 00px;
+		padding: 20px;
+		background: white;
+                border: 3px solid #663300;
+                border-radius:30px;
+		min-width: 200px;
+		min-height: 10px;
+		float: left;
+	}
+	.FirstMenu{
+		margin: 100px;
+		margin-left:500px;
+		padding: 20px;
+		background: white;
+                border: 3px solid #663300;
+                border-radius:30px;
+		min-width: 200px;
+		min-height: 10px;
+		float: left;
+	}
+	.BigShow2{
+		margin: 30px;
+		padding: 20px;
+		background: white;
+                border: 3px solid #663300;
+                border-radius:30px;
+		min-width: 200px;
+		min-height: 10px;
+		float: left;
+	}
+	.BigShow3{
+		margin: 50px;
+		margin-top: 0px;
+		padding: 20px;
+		background: silver;
+                border: 3px solid black;
+                border-radius:30px;
+		min-width: 20px;
+		min-height: 10px;
+		float: left;
+	}
+	.tabel{
+		margin: 20px;
+		padding: 20px;
+		background: white;
+                border: 3px solid #663300;
+                border-radius:30px;
+		min-width: 200px;
+		min-height: 100px;
+		float: left;
+	}
+	
+	input[type="submit"], input[type="reset"], input[type="number"],input[type="text"] {
+		background-color: #663300;
+		border: 1px solid silver;
+		border-radius:15px;
+		color: #ffe6e6;
+		padding:5px 30px;
+		margin: 5px;
+		font-weight: bold;
+	}
+	

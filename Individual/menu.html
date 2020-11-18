@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+		
+		<link rel="stylesheet" type="text/css" href="stil.css" />
+                 <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+	</head>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="app">
+
+<div ng-controller="CartController">
+<div class="FirstMenu">
+    <h1>Alege cine esti :</h1>
+    <form name="meniu_alege" ng-show ="true">
+      <label><input value="cumparator" type="radio" name="user" ng-model="inter" />Cumparator</label> <br />
+ <label><input value="manager" type="radio" name="user" ng-model="inter" />Manager</label> <br /><br>
+ <label><input type="submit" ng-click="Enter()" value="Intra"></label>
+</form>
+</div>
+   
+
+
+</div>
+   <script type="text/javascript" src="serviceEX.js"></script>
+
+</body>
+</html>

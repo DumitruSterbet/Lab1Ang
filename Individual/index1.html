@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+		
+		<link rel="stylesheet" type="text/css" href="stil.css" />
+                 <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+	</head>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="app">
+
+<div  ng-controller="ProductController">
+<div class="meniu_manager" ng-show="true">
+<input type="submit" ng-click="addpc()" value="Adauga produs">
+<input type="submit" ng-click="delpc()" value="Sterge produs">
+<input type="submit" ng-click="changepc()" value="Modifica produs">
+
+
+<div class="addPC" ng-show="AddPC">
+</br>
+</br>
+ Denumirea produsului: <br><input type="text" ng-model="comerciant.model"></br>
+                     Tipul produsului:</br>
+<select ng-model="comerciant.tip">
+    <option value="mouse">Mouse
+    <option value="monitor">Monitor
+    <option value="PC">Calculator PC
+    <option value="tastatura">Tastatura
+    <option value="boxe">Boxe
+  </select></br>
+  Pretul produsului:<br> <input type="number" ng-model="comerciant.pret"><br>
+<br><br>
+<input type="submit" ng-click="callToAddToProductList()" value="Adauga"></br></br>
+</div>
+<div class="delPC" ng-show="DelPC">
+</br></br>
+Introdu indexul produsului pe care vrei sa stergi:<br> <input type="number" ng-model="deleteInd"></br></br>
+ <input type="submit" ng-click="callToDelToProductList()" value="Delete"></br></br>
+</div>
+
+<div class="changePC" ng-show="ChangePC">
+</br></br>
+Introdu indexul produsului pe care vrei sa modifici:<br> <input type="number" ng-model="changeInd"></br></br>
+
+Introdu valoarea noua pentru model : <br><input type="text" ng-model="comerM.modelM"></br></br>
+Introdu valoarea noua pentru tip:</br>
+<select ng-model="comerM.tipM">
+    <option value="mouse">Mouse
+    <option value="monitor">Monitor
+    <option value="PC">Calculator PC
+    <option value="tastatura">Tastatura
+    <option value="boxe">Boxe
+  </select></br>
+Introdu valoarea noua pentru pret: <br><input type="number" ng-model="comerM.pretM"></br></br>
+ 
+<input type="submit" ng-click="callToChangeToProductList()" value="Modifica"></br>
+</div>
+
+</div></div>
+
+
+<div ng-controller="CartController" >
+<br>
+<div class="BigShow">
+<input type="submit" ng-click="ShowList()" value="Afiseaza lista produselor">
+
+<div class="showlista" ng-show="aratalista">
+<div class="page-header">
+      
+        <table class="tabel">
+            <thead>
+                <tr>
+                    <th>Model</th>
+ <th>Tip</th><th>Pret</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+            <ol>
+               <tr ng-repeat="item in products">
+                    <td><li style="list-style-type: decimal">{{item.model}}</li></td><td> {{item.tip}}</td><td> {{item.pret}}</td>
+                    
+                </tr>
+                </ol>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</div>
+<div class="BigShow3">
+<input type="submit" ng-click="exitMenu()" value="Meniu">
+</div>
+</div>
+
+  <script type="text/javascript" src="serviceEX.js"></script>
+  </body>
+</html>

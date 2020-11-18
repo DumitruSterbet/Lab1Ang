@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+		
+		<link rel="stylesheet" type="text/css" href="stil.css" />
+                 <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+	</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="app">
+
+<div ng-controller="CartController" >
+<div class="meniu_manager" ng-show="true">
+
+<input type="submit" ng-click="ShowList()" value="Afiseaza lista produselor">
+<input type="submit" ng-click="ShowListByTip()" value="Cauta dupa denumire">
+<input type="submit" ng-click="ShowListASC()" value="Sorteaza lista dupa pret">
+<input type="submit" ng-click="ShowCos()" value="Afiseaza continutul cosului">
+<input type="submit" ng-click="AfisSumCos()" value="Afiseaza suma cosului">
+<input type="submit" ng-click="exitMenu()" value="Meniu">
+<div ng-show="afisSumCos">
+<p>Valoare cosului este :{{suma}} lei</p>
+</div>
+
+<div class="showlista" ng-show="aratalista">
+<div class="page-header">
+      
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Model</th>
+ <th>Tip</th><th>Pret</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+            <ol>
+               <tr ng-repeat="item in products">
+                    <td><li style="list-style-type: decimal">{{item.model}}</li></td><td> {{item.tip}}</td><td> {{item.pret}}</td>
+                    
+                </tr> <ol>
+            </tbody>
+        </table>
+    
+</div></div>
+
+
+<div class="showlista" ng-show="aratalistaTip">
+<div class="page-header"><p>Introdu caractere filtru</p>
+      <p><input type="text" ng-model="test"> </p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Model</th>
+ <th>Tip</th><th>Pret</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+               <tr ng-repeat="item in products |  filter:test ">
+                    <td>{{item.model}}</td><td> {{item.tip}}</td><td> {{item.pret}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+<div class="showlista" ng-show="aratalistaASC">
+<div class="page-header">
+      
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Model</th>
+ <th>Tip</th><th>Pret</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+               <tr ng-repeat="item in products |orderBy : 'pret'">
+                    <td>{{item.model}}</td><td> {{item.tip}}</td><td> {{item.pret}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+<div class="SHOWcos" ng-show="showCOS">
+<div class="page-header">
+      
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Model</th>
+ <th>Tip</th><th>Pret</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+               <tr ng-repeat="item in arataCOS">
+                    <td>{{item.model}}</td><td> {{item.tip}}</td><td> {{item.pret}}</td>
+                    
+                </tr>
+              
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+</div>
+
+
+
+<div  ng-controller="ProductController">
+<div class="BigShow2">
+<input type="submit" ng-click="AddToCos()" value="Adauga un cos">
+
+<div class="addCos" ng-show="addcos">
+<p>Introdu indexul produsului ce vei adauga in cos</p>
+ <input type="number" ng-model="addTOcos"></br></br>
+ <input type="submit" ng-click="callToAddCos()" value="Adauga"></br></br>
+
+</div></div></div>
+
+
+  <script type="text/javascript" src="serviceEX.js"></script>
+  </body>
+</html>

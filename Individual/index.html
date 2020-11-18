@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="studentApp">
+<head>
+  
+		<title>Inregistrare</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="stel.css" />
+                 <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>  
+  <div class="block11" ng-controller="ctrController">
+  <div class="block12" ng-show="inreg">
+    <h1>Inregistreaza-te:</h1>
+    <form name="myForm">
+            <label for="login" >Login:  </label><br />
+            <input type="text" id="login"
+            name="login" 
+             ng-model="student.login" required my-directive/> <br />
+            <span ng-show="myForm.login.$invalid">Introdu cel putin 4 caractere</br></br></span>
+
+            <label for="password">Password: </label><br />
+                <input type="text" id="password" name="password" ng-model="student.password" required my-directive/> <br />
+
+                <span ng-show="myForm.password.$invalid">Introdu cel putin 4 caractere</br></br></span>
+
+            <label for="email" >Email:</label><br />
+                <input type="email" name="email" ng-model="student.email" required /> <br /><br />
+                <span ng-show="myForm.email.$invalid">Email-ul nu este completat corect.</br></br></span>
+
+
+<input type="submit" ng-click="submitStudnetForm()" value="Submit" 
+ng-disabled="myForm.login.$invalid || myForm.password.$invalid || myForm.email.$invalid">
+
+<input type="reset" ng-click="resetForm()" value="Reset" /> <br />
+</form >
+</div>
+  
+  
+ 
+  <div class="block22" ng-show="logare">
+    <h1>Logheaza-te pentru a avea acces la date:</h1>
+            <label for="login" >Login: </label><br />
+            <input type="text" id="login" ng-model="student.login" /> <br />
+
+            <label for="password">Password:</label><br />
+                <input type="text" id="password" ng-model="student.password" /> <br />
+            
+<h2>{{message}}</h2>
+<input type="submit" ng-click="submitLogForm()" value="Submit"
+
+</p>
+
+<input type="reset" ng-click="resetFormLog()" value="Reset" /> <br />
+</div>
+  
+  </div>
+
+ <script src="app.js"></script>
+</body>
+</html>

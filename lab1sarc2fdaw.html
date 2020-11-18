@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app="purchaseApp">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body ng-controller="purchaseController">
+    <div class="page-header">
+        <p>Sarcina 2 cu ng-repeat :</p>
+<p>Valoarea lui a : <input type="number" ng-model="a"></p>
+    
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Rezultat</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in list.items">
+                    <td>{{item.el}} <p> Inmultind cu a </p> {{item.el*a}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<h2>Sarcina 2 fara ng repeat </h2>
+
+ <p>{{1}} <p> Inmultind cu a </p> {{1*a}}</p>
+<p>{{2}} <p> Inmultind cu a </p> {{2*a}}</p>
+<p>{{3}} <p> Inmultind cu a </p> {{3*a}}</p>
+<p>{{4}} <p> Inmultind cu a </p> {{4*a}}</p>
+<p>{{5}} <p> Inmultind cu a </p> {{5*a}}</p>
+<p>{{6}} <p> Inmultind cu a </p> {{6*a}}</p>
+<p>{{7}} <p> Inmultind cu a </p> {{7*a}}</p>
+<p>{{8}} <p> Inmultind cu a </p> {{8*a}}</p>
+<p>{{9}} <p> Inmultind cu a </p> {{9*a}}</p>
+
+
+
+
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+var model = {
+    items: [
+        { el: 1 },
+        { el: 2 },
+        { el: 3 },
+        { el: 4 },
+        { el: 5 },
+        { el: 6 },
+        { el: 7 },
+        { el: 8 },
+        { el: 9 },
+    ]
+};
+var purchaseApp = angular.module("purchaseApp", []);
+    purchaseApp.controller("purchaseController", function ($scope) {
+    $scope.list = model;
+    
+});
+</script>
+
+</body>
+</html>

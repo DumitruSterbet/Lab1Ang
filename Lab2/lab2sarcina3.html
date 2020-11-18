@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>Alege studentul sub numarul de ordine:</p>
+
+<select ng-model="selected" ng-options="x for (x, y) in students">
+</select>
+
+<h1>Numele: {{selected.firstname}}</h1>
+<h2>Prenumele: {{selected.lastname}}</h2>
+<h3>Nota: {{selected.note}}</h3>
+
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.students = {
+        1 : { el: 1,firstname: "Vasile",lastname: "Potlog", note: 4 },
+        2 : { el: 2,firstname: "Johny",lastname: "Deep", note: 5 },
+        3 : { el: 3,firstname: "George",lastname: "Stalin", note: 9 },
+        4 : { el: 4,firstname: "Kiril",lastname: "Seleznev", note: 8 },
+        5 : { el: 5,firstname: "Sveatomir",lastname: "Kuznetov", note:7 },
+        6 : { el: 6,firstname: "Victoria",lastname: "Dirijor", note: 1},
+        7 : { el: 7,firstname: "Venamin",lastname: "Cosbuc", note: 2 },
+        8 : { el: 8,firstname: "Vasile",lastname: "Stalin", note: 6 },
+        9 : { el: 9,firstname: "Amalia",lastname: "Virasmat", note: 10 }
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html ng-app="purchaseApp">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body ng-controller="purchaseController">
+    <div class="page-header">
+     
+    
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nr de ordine</th>
+ <th>Nume</th><th>Prenume</th><th>Nota</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+               <tr ng-repeat="item in list.items">
+                    <td>{{item.el}}</td><td> {{item.firstname}}</td><td> {{item.lastname}}</td><td> {{item.note}} </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+var model = {
+    items: [
+        { el: 1,firstname: "Vasile",lastname: "Potlog", note: 4 },
+        { el: 2,firstname: "Johny",lastname: "Deep", note: 5 },
+        { el: 3,firstname: "George",lastname: "Stalin", note: 9 },
+        { el: 4,firstname: "Kiril",lastname: "Seleznev", note: 8 },
+        { el: 5,firstname: "Sveatomir",lastname: "Kuznetov", note:7 },
+        { el: 6,firstname: "Victoria",lastname: "Dirijor", note: 1},
+        { el: 7,firstname: "Venamin",lastname: "Cosbuc", note: 2 },
+        { el: 8,firstname: "Vasile",lastname: "Stalin", note: 6 },
+        { el: 9,firstname: "Amalia",lastname: "Virasmat", note: 10 }
+    ]
+};
+
+var purchaseApp = angular.module("purchaseApp", []);
+    purchaseApp.controller("purchaseController", function ($scope) {
+    $scope.list = model;
+    
+});
+</script>
+
+</body>
+</html>

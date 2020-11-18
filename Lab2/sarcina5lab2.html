@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="personCtrl">
+
+First Value: <input type="text" ng-model="firstValue"><br>
+Last Value: <input type="text" ng-model="lastValue"><br>
+<br>
+ <h1 ng-click="changeName()">Result : {{fullValue}}</h1>
+
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('personCtrl', function($scope) {
+    $scope.firstValue = 2;
+    $scope.lastValue = 3;
+    $scope.fullValue = "Tastati pentru control al impartirii fara rest";
+     $scope.changeName = function() {
+         $scope.mod = $scope.firstValue % $scope.lastValue;
+if( $scope.mod != 0)
+{ $scope.fullValue="Se imparte cu rest";
+}else {$scope.fullValue="Se imparte fara rest";}
+  }   
+});
+</script>
+
+</body>
+</html>

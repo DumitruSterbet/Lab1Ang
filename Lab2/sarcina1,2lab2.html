@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<h2>Introdu numarul de ordine a studentului:</h2> <input type="number" ng-model="value"><br>
+<h2> Valoarea lui X la patrat : {{value*value}} </h2><br>
+<h2> Afisarea studentului dupa numarul de ordine introdus de la 1 la 9 </h2><br>
+<ul>
+<h1 ng-repeat="x in students | filter : {el : value}"><p>{{" Prenume : "+x.firstname}}</p>
+<p>{{" Nume : " + x.lastname}}</p> {{" Nota : "+x.note}}</h1>
+</ul>
+
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+$scope.value = 0;
+    $scope.students = [
+        
+         { el : 1,firstname : "Vasile",lastname: "Potlog", note: 4 },
+         { el: 2,firstname: "Johny",lastname: "Deep", note: 5 },
+         { el: 3,firstname: "George",lastname: "Stalin", note: 9 },
+         { el: 4,firstname: "Kiril",lastname: "Seleznev", note: 8 },
+         { el: 5,firstname: "Sveatomir",lastname: "Kuznetov", note:7 },
+         { el: 6,firstname: "Victoria",lastname: "Dirijor", note: 1},
+         { el: 7,firstname: "Venamin",lastname: "Cosbuc", note: 2 },
+         { el: 8,firstname: "Vasile",lastname: "Stalin", note: 6 },
+         { el: 9,firstname: "Amalia",lastname: "Virasmat", note: 10 }
+    ]
+});
+</script>
+
+</body>
+</html>

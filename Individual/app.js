@@ -25,9 +25,9 @@
 $scope.inreg=true;// pentru afisarea si ascunderea formularului de inregistrare
 
             $scope.originalStudent = {// date valide ce se afiseaza la intrare in formularul de inregistrare
-                login: 'Dumitru',
-                password: 'Sterbet',
-                email: 'd.sterbet@inbox.ru'
+                login: 'alex',
+                password: 'tozlovanu',
+                email: '333@mail.ru'
                 };
           
            // copiere pentru afisare la inceput a datelor valide
